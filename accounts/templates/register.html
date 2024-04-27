@@ -1,0 +1,83 @@
+{% block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Ana`s Linkedin</title>
+  <link rel="stylesheet" href="{% static "style/register.css" %}">
+
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <img src="{% static "media/georgia-logo.jpg" %}">
+      <h2>Create your Profile</h2>
+      <form class='form-container' id = "form_creation" name="form_creation" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="column">
+            <label for="photo"><strong>Photo</strong></label>
+            <input type="file" name="photo" id="photo" required>
+            
+            <label for="username"><strong>Username</strong></label>
+            {{ form.username }}
+            <br>
+          <label for="first_name"><strong>First Name</strong></label>
+          {{ form.first_name }}
+          <br>
+          <label for="Last_name"><strong>Last Name</strong></label>
+          {{ form.last_name }}
+          <br>
+          <label for="gender"><strong>Gender</strong></label>
+          {{ form.gender }}
+          <br>
+          <label for="Category"><strong>Category</strong></label>
+          {{ form.category }}
+          <br>
+          
+        </div>
+
+
+        <div class="column">
+          
+          
+          <label for="state"><strong>state</strong></label>
+          {{ form.state }}
+          <br>
+          <br>
+          <label for="Race"><strong>Race</strong></label>
+          {{ form.Race }}
+          <br>
+
+          <label for="email"><strong>email</strong></label>
+          {{ form.email }}
+          <br>
+          <label for="DOB"><strong>Birthday</strong></label>
+          {{ form.DOB }}
+          <br>
+          <label for="Bio"><strong>Bio</strong></label>
+          {{ form.Bio }}
+          <br>
+          <label for="password1"><strong>Password</strong></label>
+          {{ form.password1 }}
+          <br>
+          <label for="password2"><strong>Repeat Password</strong></label>
+          {{ form.password2 }}
+          <br>
+        </div>
+
+        
+      </form>
+      <button form="form_creation" class="btn btn-primary">Create</button>
+      
+      <p class="message">Already registered? <a href="{% url "LoginView" %}">Sign In</a></p>
+    </div>
+  </div>
+
+</body>
+
+
+</html>
+{% endblock %}

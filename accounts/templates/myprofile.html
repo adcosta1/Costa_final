@@ -1,0 +1,77 @@
+{% block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Ana`s Linkedin</title>
+  <link rel="stylesheet" href="{% static "style/myprofile.css" %}">
+
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <img src="{% static "media/georgia-logo.jpg" %}">
+
+      <form method="post">
+        {% csrf_token %}
+        <h2>Update Profile</h2>
+        <div class="form-container">
+          <div class="column">
+            <label for="photo"><strong>Photo</strong></label>
+            {{form.photo}}
+            <br>
+            <label for="username"><strong>Username</strong></label>
+            {{ form.username }}
+            <br>
+            <label for="first_name"><strong>First Name</strong></label>
+            {{ form.first_name }}
+            <br>
+            <label for="Last_name"><strong>Last Name</strong></label>
+            {{ form.last_name }}
+            <br>
+            <label for="gender"><strong>Gender</strong></label>
+            {{ form.gender }}
+            <br>
+            <label for="Category"><strong>Category</strong></label>
+            {{ form.category }}
+            <br>
+
+          </div>
+          
+          <div class="column">
+            
+            
+            <label for="state"><strong>state</strong></label>
+            {{ form.state }}
+            <br>
+            <br>
+            <label for="Race"><strong>Race</strong></label>
+            {{ form.Race }}
+            <br>
+
+            <label for="email"><strong>email</strong></label>
+            {{ form.email }}
+            <br>
+            <label for="DOB"><strong>Birthday</strong></label>
+            {{ form.DOB }}
+            <br>
+            <label for="Bio"><strong>Bio</strong></label>
+            {{ form.Bio }}
+            <br>
+            
+            
+            <!-- outros campos do formulário aqui -->
+          </div>
+        </div>
+        
+        <button class="btn btn-primary">Update</button>
+        </form>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
+{% endblock %}
